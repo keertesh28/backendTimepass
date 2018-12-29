@@ -1,0 +1,75 @@
+
+Register
+Name, Mobile, email
+
+OTP verification
+otp
+
+OR
+
+Login 
+Mobile, password
+
+
+Roles:
+- Rider
+
+- Admin
+- // Dealer
+
+
+
+dashboard
+
+- New 
+
+- History
+
+- Upcoming
+
+- Profile 
+
+- Wallet (Payment Gateway)
+
+
+New 
+
+- Product listing (GET)
+ 
+- Showing product details 
+
+- Book (POST) with all the booking details
+
+
+
+Upcoming 
+
+- Booking Details
+
+- Cancel Booking
+
+- policy details (for cancellation)
+
+
+History
+
+- Past Booking details
+
+
+Profile
+
+- Profile image
+
+- DL image
+
+
+
+
+Wallet
+
+
+
+
+
+
+
