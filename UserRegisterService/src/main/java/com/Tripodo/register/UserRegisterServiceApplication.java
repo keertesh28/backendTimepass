@@ -13,7 +13,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableAutoConfiguration
 @EnableJpaRepositories("com.Tripodo.dataaccess")
 @Configuration
-@ComponentScan({"com.Tripodo.service","com.Tripodo.dataaccess","com.Tripodo.register"})
+@ComponentScan({"com.Tripodo.service","com.Tripodo.dataaccess","com.Tripodo.register","com.Tripodo.entity"})
 @EntityScan("com.Tripodo.entity")
 public class UserRegisterServiceApplication {
 

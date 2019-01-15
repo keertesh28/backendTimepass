@@ -1,11 +1,12 @@
 package com.Tripodo.register;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.Tripodo.entity.Email;
 import com.Tripodo.entity.User;
 import com.Tripodo.service.MailService;
 import com.Tripodo.service.UserRegisterService;
@@ -42,11 +43,25 @@ public class UserRegisterController
 	}
 	
 	@RequestMapping(value = "/forgotpassword",method=RequestMethod.POST)
-	private String Resetpwdmail(@RequestBody User user)
+	private String Resetpwdmail(@RequestBody User user,Email email)
 	{	
-		mailservice.sendmail(user);
+		mailservice.sendmail(user,email);
 		return "true";
 			
+	}
+	
+	@RequestMapping(value = "/verifytoken/{token}",method=RequestMethod.GET)
+	private Boolean tokenvalidity(@PathVariable String token)
+	{
+		if(mailservice.checktokenexpiry(token) == true)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	
 	}
 
 }
